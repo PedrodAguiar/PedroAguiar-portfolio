@@ -1,16 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from '../contexts/ThemeContext'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
+  const { isDark, toggleTheme } = useTheme()
 
   const handleScroll = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -65,11 +59,11 @@ const Navbar = () => {
 
         {/* Dark Mode Toggle */}
         <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="text-gray-700 dark:text-green-400 text-xl hover:text-blue-600 dark:hover:text-green-300 transition-colors duration-300"
+          onClick={toggleTheme}
+          className="text-gray-700 dark:text-green-400 hover:text-blue-600 dark:hover:text-green-300 transition-colors duration-300 p-2"
           title="Alternar modo escuro"
         >
-          {darkMode ? '☀️' : '🌙'}
+          {isDark ? <Sun size={24} /> : <Moon size={24} />}
         </button>
 
         {/* Mobile Menu Button */}
