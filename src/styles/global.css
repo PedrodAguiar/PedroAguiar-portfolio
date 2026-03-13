@@ -1,7 +1,25 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", sans-serif;
   --font-serif: "Poppins", sans-serif;
+
+  --animate-fade-in-up: fadeInUp 0.6s ease-out;
+
+  --keyframes-fadeInUp-0%: opacity: 0, transform: translateY(30px);
+  --keyframes-fadeInUp-100%: opacity: 1, transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
