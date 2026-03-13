@@ -31,208 +31,72 @@ const Projects = () => {
   ]
 
   return (
-    <>
-      <style>{`
-        .projects {
-          background-color: var(--background);
-        }
+    <section id="projects" className="bg-gray-50 py-20 px-4">
+      {/* Header */}
+      <div className="text-center mb-12 animate-fade-in-up">
+        <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-blue-600" />
+        <h2 className="font-bold text-4xl text-gray-900 mb-2 font-serif">
+          Meus Projetos
+        </h2>
+        <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+          Aqui estão alguns dos projetos que desenvolvi. Cada um representa meu compromisso com qualidade e inovação.
+        </p>
+      </div>
 
-        .projects-header {
-          text-align: center;
-          margin-bottom: 3rem;
-          animation: fadeInUp 0.6s ease-out;
-        }
+      {/* Projects Grid */}
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projectsData.map((project, index) => (
+          <div
+            key={index}
+            className="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-blue-600 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            {/* Image */}
+            <div className="h-48 bg-gray-100 flex items-center justify-center text-5xl">
+              📱
+            </div>
 
-        .projects-header .accent-line {
-          margin: 0 auto 1rem;
-          height: 4px;
-          width: 48px;
-          background-color: var(--primary);
-          border-radius: 9999px;
-        }
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="font-bold text-xl text-gray-900 mb-2 font-serif">
+                {project.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                {project.description}
+              </p>
 
-        .projects-header h2 {
-          font-size: 2.5rem;
-          margin-bottom: 0.5rem;
-          font-family: var(--font-display);
-          font-weight: 700;
-        }
-
-        .projects-header p {
-          font-size: 1.1rem;
-          color: var(--text-muted);
-          max-width: 600px;
-          margin: 0 auto;
-        }
-
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 0 1rem;
-        }
-
-        .project-card {
-          background-color: var(--card-bg);
-          border: 1px solid var(--border);
-          border-radius: 8px;
-          overflow: hidden;
-          transition: all 0.3s ease;
-          animation: fadeInUp 0.6s ease-out;
-        }
-
-        .project-card:hover {
-          border-color: var(--primary);
-          box-shadow: 0 8px 24px rgba(0, 237, 100, 0.15);
-          transform: translateY(-4px);
-        }
-
-        .project-image {
-          height: 200px;
-          background-color: var(--background);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-
-        .image-placeholder {
-          font-size: 4rem;
-        }
-
-        .project-body {
-          padding: 1.5rem;
-        }
-
-        .project-body h3 {
-          font-size: 1.3rem;
-          margin-bottom: 0.5rem;
-          font-family: var(--font-display);
-          font-weight: 700;
-        }
-
-        .project-body p {
-          color: var(--text);
-          margin-bottom: 1rem;
-          line-height: 1.6;
-        }
-
-        .project-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-          margin-bottom: 1rem;
-        }
-
-        .tag {
-          display: inline-block;
-          padding: 0.4rem 0.8rem;
-          background-color: var(--background);
-          color: var(--primary);
-          border: 1px solid var(--border);
-          border-radius: 20px;
-          font-size: 0.85rem;
-          font-weight: 500;
-        }
-
-        .project-buttons {
-          display: flex;
-          gap: 0.5rem;
-        }
-
-        .btn {
-          padding: 0.75rem 1rem;
-          font-size: 0.9rem;
-          flex: 1;
-          justify-content: center;
-          border-radius: 6px;
-          font-weight: 600;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-family: var(--font-body);
-          text-decoration: none;
-        }
-
-        .btn-primary {
-          background-color: var(--primary);
-          color: var(--background);
-        }
-
-        .btn-primary:hover {
-          background-color: var(--primary-dark);
-          transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-          background-color: transparent;
-          color: var(--primary);
-          border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-          background-color: var(--primary);
-          color: var(--background);
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .projects-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .projects-header h2 {
-            font-size: 2rem;
-          }
-        }
-      `}</style>
-
-      <section className="projects" id="projects" style={{ padding: '80px 0' }}>
-        <div className="projects-header">
-          <div className="accent-line"></div>
-          <h2>Meus Projetos</h2>
-          <p>Aqui estão alguns dos projetos que desenvolvi. Cada um representa meu compromisso com qualidade e inovação.</p>
-        </div>
-
-        <div className="projects-grid">
-          {projectsData.map((project, index) => (
-            <div key={index} className="project-card" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="project-image">
-                <div className="image-placeholder">📱</div>
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-block px-3 py-1 bg-gray-100 text-blue-600 border border-gray-200 rounded-full text-sm font-medium"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
-              <div className="project-body">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="tag">{tag}</span>
-                  ))}
-                </div>
-                <div className="project-buttons">
-                  <a href={project.live} className="btn btn-primary">Ver ao vivo</a>
-                  <a href={project.github} className="btn btn-secondary">Código</a>
-                </div>
+
+              {/* Buttons */}
+              <div className="flex gap-2">
+                <a
+                  href={project.live}
+                  className="flex-1 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 text-center text-sm"
+                >
+                  Ver ao vivo
+                </a>
+                <a
+                  href={project.github}
+                  className="flex-1 px-4 py-2 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 text-center text-sm"
+                >
+                  Código
+                </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    </>
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
 

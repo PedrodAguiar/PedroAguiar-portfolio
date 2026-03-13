@@ -16,128 +16,83 @@ const Navbar = () => {
   }
 
   return (
-    <>
-      <style>{`
-        .navbar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 50;
-          background-color: var(--background);
-          border-bottom: 1px solid var(--border);
-          transition: all 0.3s ease;
-        }
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+        {/* Logo */}
+        <button
+          onClick={handleLogoClick}
+          className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors duration-300 font-serif"
+        >
+          &lt;Dev /&gt;
+        </button>
 
-        .navbar.scrolled {
-          background-color: rgba(10, 18, 23, 0.95);
-          backdrop-filter: blur(10px);
-          box-shadow: 0 2px 10px rgba(0, 237, 100, 0.1);
-        }
-
-        .navbar-content {
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 0 1rem;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 64px;
-        }
-
-        .navbar-logo button {
-          font-size: 1.5rem;
-          font-family: var(--font-display);
-          font-weight: 700;
-          color: var(--primary);
-          background: none;
-          border: none;
-          cursor: pointer;
-          transition: color 0.3s ease;
-        }
-
-        .navbar-logo button:hover {
-          color: var(--primary-dark);
-        }
-
-        .navbar-menu {
-          display: flex;
-          gap: 2rem;
-          align-items: center;
-        }
-
-        .nav-link {
-          background: none;
-          border: none;
-          color: var(--text);
-          font-size: 1rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: color 0.3s ease;
-          padding: 0.5rem 0;
-          border-bottom: 2px solid transparent;
-        }
-
-        .nav-link:hover {
-          color: var(--primary);
-          border-bottom-color: var(--primary);
-        }
-
-        .menu-toggle {
-          display: none;
-          background: none;
-          border: none;
-          color: var(--text);
-          font-size: 1.5rem;
-          cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-          .navbar-menu {
-            display: none;
-            position: absolute;
-            top: 64px;
-            left: 0;
-            right: 0;
-            flex-direction: column;
-            gap: 0;
-            background-color: var(--background-light);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
-          }
-
-          .navbar-menu.active {
-            display: flex;
-          }
-
-          .nav-link {
-            width: 100%;
-            padding: 1rem;
-            text-align: left;
-            border-bottom: none;
-          }
-
-          .menu-toggle {
-            display: block;
-          }
-        }
-      `}</style>
-
-      <nav className="navbar" id="navbar">
-        <div className="navbar-content">
-          <div className="navbar-logo">
-            <button onClick={handleLogoClick}>&lt;Dev /&gt;</button>
-          </div>
-          <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
-            <button className="nav-link" onClick={() => handleScroll('home')}>Home</button>
-            <button className="nav-link" onClick={() => handleScroll('about')}>Sobre</button>
-            <button className="nav-link" onClick={() => handleScroll('projects')}>Projetos</button>
-            <button className="nav-link" onClick={() => handleScroll('contact')}>Contato</button>
-          </div>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-8 items-center">
+          <button
+            onClick={() => handleScroll('home')}
+            className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300 pb-1 border-b-2 border-transparent hover:border-blue-600"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => handleScroll('about')}
+            className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300 pb-1 border-b-2 border-transparent hover:border-blue-600"
+          >
+            Sobre
+          </button>
+          <button
+            onClick={() => handleScroll('projects')}
+            className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300 pb-1 border-b-2 border-transparent hover:border-blue-600"
+          >
+            Projetos
+          </button>
+          <button
+            onClick={() => handleScroll('contact')}
+            className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300 pb-1 border-b-2 border-transparent hover:border-blue-600"
+          >
+            Contato
+          </button>
         </div>
-      </nav>
-    </>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-gray-700 text-2xl"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-gray-50 border-b border-gray-200">
+          <button
+            onClick={() => handleScroll('home')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 font-medium"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => handleScroll('about')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 font-medium"
+          >
+            Sobre
+          </button>
+          <button
+            onClick={() => handleScroll('projects')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 font-medium"
+          >
+            Projetos
+          </button>
+          <button
+            onClick={() => handleScroll('contact')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 font-medium"
+          >
+            Contato
+          </button>
+        </div>
+      )}
+    </nav>
   )
 }
 
