@@ -1,153 +1,135 @@
-# Portfólio Front-end com Vite + JavaScript
+# Pedro Aguiar Portfolio
 
-Um portfólio pessoal moderno e responsivo, desenvolvido com **Vite** e **JavaScript puro**, inspirado no design do MongoDB.
+Portfolio pessoal desenvolvido com React, Vite e Tailwind CSS, com foco em apresentacao profissional, navegacao fluida e layout responsivo.
 
-## 🎨 Design
+## Visao geral
 
-- **Paleta de Cores**: Verde (#00ED64), Preto (#0A1217), Branco
-- **Tipografia**: Poppins (títulos) + Inter (corpo)
-- **Animações**: Fade-in, Slide-in suaves
-- **Responsivo**: Mobile-first design
+O projeto apresenta:
 
-## 📁 Estrutura do Projeto
+- secao inicial com destaque profissional
+- secao "Sobre" com resumo e habilidades
+- secao "Projetos" com cards reutilizaveis
+- secao "Experiencia" em timeline vertical com expansao de detalhes
+- secao de contato com links sociais
+- suporte a tema claro e escuro
 
-```
-portfolio-js/
-├── src/
-│   ├── components/          # Componentes reutilizáveis
-│   │   ├── Navbar.js       # Barra de navegação
-│   │   ├── Hero.js         # Seção inicial
-│   │   ├── About.js        # Sobre você
-│   │   ├── Projects.js     # Galeria de projetos
-│   │   ├── Contact.js      # Formulário de contato
-│   │   └── Footer.js       # Rodapé
-│   ├── styles/
-│   │   └── global.css      # Estilos globais
-│   └── main.js             # Arquivo principal
-├── index.html              # HTML principal
-└── package.json            # Dependências
-```
+## Stack
 
-## 🚀 Como Rodar
+- React 19
+- Vite 8
+- Tailwind CSS 4
+- lucide-react
 
-### Instalação
+## Como rodar
+
+Instale as dependencias:
 
 ```bash
 npm install
 ```
 
-### Desenvolvimento
+Inicie o ambiente de desenvolvimento:
 
 ```bash
 npm run dev
 ```
 
-Abra `http://localhost:5173` no navegador.
-
-### Build para Produção
+Gere a build de producao:
 
 ```bash
 npm run build
 ```
 
-### Preview da Build
+Visualize a build localmente:
 
 ```bash
 npm run preview
 ```
 
-## 🎯 Personalizando
+## Estrutura
 
-### 1. Alterar seu Nome e Informações
-
-Abra `src/components/Hero.js` e atualize:
-
-```javascript
-<h1>Olá, sou <span class="highlight">SEU NOME AQUI</span></h1>
+```text
+src/
+|-- App.jsx
+|-- main.jsx
+|-- components/
+|   |-- About.jsx
+|   |-- Contact.jsx
+|   |-- Experience.jsx
+|   |-- ExperienceTimelineItem.jsx
+|   |-- Footer.jsx
+|   |-- Hero.jsx
+|   |-- Navbar.jsx
+|   |-- PortfolioCard.jsx
+|   |-- Projects.jsx
+|   `-- TagBadge.jsx
+|-- contexts/
+|   `-- ThemeContext.jsx
+`-- styles/
+    `-- global.css
 ```
 
-### 2. Adicionar sua Foto
+## Componentes principais
 
-Substitua o emoji pela sua foto no componente Hero:
+### `Navbar`
 
-```javascript
-<div class="placeholder">👨‍💻</div>  // ← Troque por <img src="sua-foto.jpg" />
-```
+Responsavel pela navegacao entre as secoes da pagina e pelo toggle de tema.
 
-### 3. Adicionar seus Projetos
+### `Projects`
 
-Edite o array `projectsData` em `src/components/Projects.js`:
+Renderiza os projetos do portfolio usando o componente reutilizavel `PortfolioCard`.
 
-```javascript
-const projectsData = [
-  {
-    title: 'Seu Projeto',
-    description: 'Descrição do projeto',
-    tags: ['JavaScript', 'HTML/CSS'],
-    live: 'https://seu-projeto.com',
-    github: 'https://github.com/seu-usuario/seu-projeto'
-  },
-  // ... mais projetos
-];
-```
+### `Experience`
 
-### 4. Atualizar Links de Contato
+Exibe a experiencia profissional em uma timeline vertical responsiva, organizada do item mais recente para o mais antigo.
 
-Edite `src/components/Contact.js` e atualize os links sociais:
+### `ExperienceTimelineItem`
 
-```javascript
-<a href="mailto:seu.email@exemplo.com" class="social-icon">📧</a>
-<a href="https://linkedin.com/in/seu-usuario" class="social-icon">💼</a>
-<a href="https://github.com/seu-usuario" class="social-icon">💻</a>
-```
+Componente de item da timeline com:
 
-## 📦 Dependências
+- titulo da experiencia
+- periodo
+- descricao resumida
+- tags
+- expansao de detalhes
 
-- **Vite** - Build tool rápido
-- **Google Fonts** - Tipografia (Poppins + Inter)
+### `TagBadge`
 
-## 🌐 Deploy
+Badge reutilizavel usado nas secoes de projetos e experiencia para manter consistencia visual.
 
-### Vercel
+## Personalizacao
 
-```bash
-npm install -g vercel
-vercel
-```
+### Atualizar projetos
 
-### Netlify
+Edite o array `projectsData` em `src/components/Projects.jsx`.
 
-```bash
-npm install -g netlify-cli
-netlify deploy --prod --dir=dist
-```
+### Atualizar experiencias
 
-### GitHub Pages
+Edite o array `experienceData` em `src/components/Experience.jsx`.
 
-1. Adicione ao `package.json`:
-```json
-"homepage": "https://seu-usuario.github.io/portfolio-js"
-```
+### Atualizar apresentacao principal
 
-2. Deploy:
-```bash
-npm run build
-git add dist/
-git commit -m "Deploy"
-git push
-```
+Edite os textos em:
 
-## 📝 Licença
+- `src/components/Hero.jsx`
+- `src/components/About.jsx`
+- `src/components/Contact.jsx`
 
-MIT - Sinta-se livre para usar este projeto como base para seu portfólio!
+### Ajustar estilos globais
 
-## 💡 Dicas
+As fontes, animacoes e tokens de tema estao em `src/styles/global.css`.
 
-- Customize as cores editando as variáveis CSS em `src/styles/global.css`
-- Adicione mais seções criando novos componentes em `src/components/`
-- Use emojis para ícones ou integre uma biblioteca como Font Awesome
-- Teste a responsividade no DevTools (F12)
+## Responsividade
 
----
+O layout foi construido para funcionar bem em desktop e mobile, com:
 
-**Desenvolvido com ❤️ usando Vite + JavaScript**
+- menu responsivo
+- grids adaptativos
+- timeline ajustada para telas menores
+- espacos e tipografia consistentes entre breakpoints
+
+## Observacoes
+
+- O projeto usa componentes simples e reutilizaveis para facilitar manutencao.
+- A secao de experiencia foi organizada em timeline para evidenciar progressao profissional.
+- A identidade visual segue a paleta clara/escura definida no projeto.
