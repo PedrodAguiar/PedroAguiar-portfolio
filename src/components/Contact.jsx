@@ -1,39 +1,82 @@
-import { Linkedin, Github } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { contactData, emailHref, whatsappHref } from "../data/contactData";
+
+const actionClasses =
+  "flex items-center gap-2 rounded-lg border px-6 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-1";
 
 const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-white dark:bg-[#0A1217] py-20 px-4 transition-colors duration-300"
+      className="bg-white px-4 py-20 transition-colors duration-300 dark:bg-[#0A1217]"
     >
-      {/* Header */}
-      <div className="text-center mb-12 animate-fade-in-up">
+      <div className="mb-12 text-center animate-fade-in-up">
         <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-blue-600 dark:bg-green-400" />
-        <h2 className="font-bold text-4xl text-gray-900 dark:text-white mb-2 font-serif">
-          Vamos Trabalhar Juntos?
+        <h2 className="mb-2 font-serif text-4xl font-bold text-gray-900 dark:text-white">
+          Vamos trabalhar juntos?
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-          Gostou dos projetos? Entre em contato caso queira conversar sobre
-          oportunidades ou colaborações!
+        <p className="mx-auto max-w-2xl text-lg text-gray-500 dark:text-gray-400">
+          Gostou dos projetos? Entre em contato para conversar sobre
+          oportunidades, freelas e colaboracoes.
         </p>
       </div>
 
-      {/* Social Links */}
-      <div className="flex justify-center gap-4">
+      <div className="mb-6 text-center">
         <a
-          href="https://www.linkedin.com/in/pedro-aguiar-b23a3020b/"
+          href={emailHref}
+          className="inline-flex items-center gap-2 text-lg font-semibold text-gray-900 transition-colors duration-300 hover:text-blue-600 dark:text-white dark:hover:text-green-400"
+        >
+          <Mail size={20} />
+          {contactData.email}
+        </a>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-4">
+        <a
+          href={emailHref}
+          className={`${actionClasses} border-blue-600 bg-blue-600 text-white hover:bg-blue-700 dark:border-green-400 dark:bg-green-400 dark:text-black dark:hover:bg-green-300`}
+        >
+          <Mail size={18} />
+          E-mail
+        </a>
+
+        {whatsappHref ? (
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${actionClasses} border-gray-200 bg-gray-100 text-gray-700 hover:border-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-500/30 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-green-400 dark:hover:bg-green-400 dark:hover:text-black`}
+          >
+            <MessageCircle size={18} />
+            WhatsApp
+          </a>
+        ) : (
+          <button
+            type="button"
+            disabled
+            className={`${actionClasses} cursor-not-allowed border-gray-200 bg-gray-100 text-gray-700 opacity-60 dark:border-green-500/30 dark:bg-gray-800 dark:text-gray-300`}
+            title="Adicione seu numero em src/data/contactData.js para ativar o link direto do WhatsApp."
+          >
+            <MessageCircle size={18} />
+            WhatsApp
+          </button>
+        )}
+
+        <a
+          href={contactData.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-green-500/30 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-green-400 hover:text-white dark:hover:text-black hover:border-blue-600 dark:hover:border-green-400 transition-all duration-300 hover:-translate-y-1 font-medium text-sm"
+          className={`${actionClasses} border-gray-200 bg-gray-100 text-gray-700 hover:border-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-500/30 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-green-400 dark:hover:bg-green-400 dark:hover:text-black`}
         >
           <Linkedin size={18} />
           LinkedIn
         </a>
+
         <a
-          href="https://github.com/PedrodAguiar"
+          href={contactData.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-green-500/30 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-green-400 hover:text-white dark:hover:text-black hover:border-blue-600 dark:hover:border-green-400 transition-all duration-300 hover:-translate-y-1 font-medium text-sm"
+          className={`${actionClasses} border-gray-200 bg-gray-100 text-gray-700 hover:border-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-500/30 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-green-400 dark:hover:bg-green-400 dark:hover:text-black`}
         >
           <Github size={18} />
           GitHub
