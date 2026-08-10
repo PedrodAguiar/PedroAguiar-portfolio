@@ -14,7 +14,7 @@ const secondaryButtonClasses =
 const iconLinkClasses =
   "inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-600 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-green-400 dark:hover:text-green-400";
 
-const Hero = () => {
+const   Hero = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="mb-6 h-1 w-12 rounded-full bg-blue-600 dark:bg-green-400" />
 
           <h1 className="mb-3 max-w-3xl font-serif text-5xl font-bold text-gray-900 dark:text-white sm:text-6xl">
-            Ola, sou{" "}
+            Olá, sou{" "}
             <span className="text-blue-600 dark:text-green-400">
               {contactData.name}
             </span>
@@ -45,10 +45,10 @@ const Hero = () => {
           </p>
 
           <p className="mb-8 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-            Desenvolvedor front-end focado em criar interfaces modernas,
-            responsivas e intuitivas. Se a ideia for tirar um projeto do papel
-            ou evoluir um produto, o contato principal agora fica visivel ja no
-            Hero.
+            Formado em Análise e Desenvolvimento de Sistemas e atualmente
+            cursando Bacharelado em Ciência de Dados e Inteligência Artificial.
+            Busco transformar dados em informações úteis para análise, automação
+            e tomada de decisão.
           </p>
 
           <div className="mb-8 flex flex-wrap gap-4">

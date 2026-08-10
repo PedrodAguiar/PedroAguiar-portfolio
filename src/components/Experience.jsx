@@ -4,32 +4,32 @@ import ExperienceTimelineItem from "./ExperienceTimelineItem";
 const experienceData = [
   {
     title: "Desenvolvedor Front-end Freelancer (Noah)",
-    period: "Atual",
+    period: "2025 - 2026",
     description:
-      "Atuacao em demandas front-end com foco em interfaces responsivas, componentizacao e entregas alinhadas a necessidades reais de produto.",
-    tags: ["React", "Next.js", "TailwindCSS", "TypeScript"],
+      "Atuação em demandas front-end com leitura de requisitos, lógica de programação, componentização e entregas alinhadas a necessidades reais de produto.",
+    tags: ["React", "Next.js", "TypeScript", "APIs"],
     details:
       "Vivencia voltada a transformar requisitos em experiencias digitais bem estruturadas, com refinamento visual, organizacao de componentes e integracao com APIs quando necessario.",
     icon: BriefcaseBusiness,
   },
   {
     title: "Hackathon Intelbras",
-    period: "Evento de curta duracao",
+    period: "Evento de curta duração",
     description:
-      "Participacao em um desafio com prazo reduzido para idealizar e prototipar uma solucao aplicada, mantendo foco em validacao rapida e entrega funcional.",
-    tags: ["Python", "Web Scraping", "Chatbot", "APIs"],
+      "Participação em desafio de curta duração para idealizar e prototipar uma solução com Python, web scraping e organização de dados coletados.",
+    tags: ["Python", "Web Scraping", "Automação", "APIs"],
     details:
-      "A experiencia reforcou trabalho em equipe, priorizacao sob pressao e capacidade de transformar uma ideia em prototipo navegavel dentro de uma janela curta de execucao.",
+      "A experiência reforçou investigação de problemas, priorização sob pressão, automação de coleta de informações e transformação de uma ideia em protótipo funcional.",
     icon: Trophy,
   },
   {
-    title: "Suporte Tecnico N1",
-    period: "Experiencia anterior",
+    title: "Suporte Técnico N1",
+    period: "2024 - 2025",
     description:
-      "Atendimento inicial a usuarios, triagem de chamados e apoio na identificacao de problemas, desenvolvendo base solida de analise e comunicacao.",
-    tags: ["Atendimento", "Analise de Incidentes", "Sistemas", "Comunicacao"],
+      "Atendimento inicial a usuários, triagem de chamados e apoio na identificação de problemas em sistemas, desenvolvendo base sólida de análise e comunicação.",
+    tags: ["Sistemas", "Análise de Incidentes", "Investigação de Erros", "Comunicação"],
     details:
-      "Essa etapa fortaleceu diagnostico, organizacao e clareza na resolucao de problemas, habilidades que hoje se refletem na forma como os produtos sao pensados e implementados.",
+      "Essa etapa fortaleceu diagnóstico, organização, registro de informações e clareza na resolução de problemas, competências diretamente aplicáveis à análise de dados e melhoria de processos.",
     icon: Headset,
   },
 ];
@@ -46,8 +46,8 @@ const Experience = () => {
           {"Experi\u00eancia"}
         </h2>
         <p className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-          Uma visao cronologica das vivencias que ajudaram a construir minha
-          evolucao tecnica e minha forma de resolver problemas.
+          Vivências que construíram minha base técnica em sistemas,
+          investigação de problemas, APIs e raciocínio lógico aplicado a Dados.
         </p>
       </div>
 

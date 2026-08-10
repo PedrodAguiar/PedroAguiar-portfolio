@@ -1,15 +1,15 @@
 const About = () => {
   const skills = [
-    "JavaScript",
-    "HTML/CSS",
-    "Responsive Design",
-    "Git",
-    "React",
-    "Next.js",
+    "Python",
+    "SQL / PostgreSQL",
+    "Pandas / NumPy",
+    "Estatística",
+    "Análise de Dados",
+    "Visualização de Dados",
+    "Jupyter Notebook",
+    "React / Next.js",
     "TypeScript",
-    "MySQL",
-    "Web APIs",
-    "Performance",
+    "Git / APIs",
   ];
 
 
@@ -34,23 +34,25 @@ const About = () => {
             Quem sou eu?
           </h3>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            Olá! Sou o Pedro Daniel Aguiar, desenvolvedor Front-end freelancer
-            especializado em criar interfaces intuitivas e responsivas com React
-            e Next.js. Concluí minha graduação em Análise e Desenvolvimento de
-            Sistemas e busco expandir minhas habilidades.
+            Olá! Sou o Pedro Daniel Aguiar, formado em Análise e
+            Desenvolvimento de Sistemas e técnico em Desenvolvimento de
+            Sistemas. Minha trajetória começou com desenvolvimento de software
+            e suporte a sistemas, criando uma base sólida em tecnologia,
+            resolução de problemas e pensamento lógico.
           </p>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            Atualmente, curso Ciência de Dados e Inteligência Artificial no
-            UniSenai, visando combinar minha expertise Front-end com análise de
-            dados. Estou em busca de oportunidades de estágio para aplicar e
-            aprimorar meus conhecimentos em um ambiente dinâmico.
+            Atualmente curso Bacharelado em Ciência de Dados e Inteligência
+            Artificial, estou na 2ª fase e tenho previsão de conclusão no final
+            de 2029. Estou direcionando minha carreira para Análise de Dados e
+            Ciência de Dados, com interesse em oportunidades de Estágio ou
+            Analista de Dados.
           </p>
         </div>
 
         {/* Skills */}
         <div>
           <h3 className="font-bold text-2xl text-gray-900 dark:text-white mb-6 font-serif">
-            Habilidades
+            Dados e Tecnologia
           </h3>
           <div className="grid grid-cols-2 gap-3">
             {skills.map((skill) => (

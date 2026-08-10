@@ -3,31 +3,31 @@ import PortfolioCard from "./PortfolioCard";
 
 const projectsData = [
   {
-    title: "BookVerse (Next.js)",
+    title: "Análise de Desempenho de Estudantes",
     description:
-      "Plataforma de leitura e gerenciamento de livros, desenvolvida com Next.js e TypeScript, focada em performance e experiencia do usuario.",
-    tags: ["Next.js", "TypeScript", "React", "API REST"],
-    github: "https://github.com/PedrodAguiar/bookverse-next",
+      "Análise exploratória em Python para investigar relações entre hábitos de estudo, sono, frequência, redes sociais e desempenho acadêmico, com estatística e visualizações.",
+    tags: ["Python", "Pandas", "Seaborn", "EDA"],
+    github: "https://github.com/PedrodAguiar/analise-desempenho-estudantes",
   },
   {
-    title: "SCTEC Empreendimentos",
+    title: "Análise de Imóveis com Pandas",
     description:
-      "Website institucional moderno para empreendimentos, construido com React, TypeScript e TailwindCSS, com design responsivo e foco na apresentacao de projetos e contato.",
-    tags: ["React", "TypeScript", "TailwindCSS", "UI/UX"],
-    github: "https://github.com/PedrodAguiar/sctec-empreendimentos",
+      "Notebook de análise exploratória com Pandas usando uma base de imóveis para aluguel, incluindo inspeção de dados, estatísticas descritivas, agrupamentos e gráficos.",
+    tags: ["Python", "Pandas", "Jupyter", "EDA"],
+    github: "https://github.com/PedrodAguiar/analise-imoveis-pandas",
   },
   {
-    title: "BookVerse (JavaScript)",
+    title: "Análise de Dados de Alunos",
     description:
-      "Aplicacao web para gerenciamento de livros, desenvolvida em React com TailwindCSS e consumo de API REST, demonstrando conceitos de desenvolvimento front-end.",
-    tags: ["React", "TailwindCSS", "API REST", "JavaScript"],
-    github: "https://github.com/PedrodAguiar/BookVerse",
+      "Projeto em Pandas para praticar limpeza e transformação de dados de alunos, com tratamento de valores nulos, filtros, criação de colunas, regras de aprovação e exportação em CSV.",
+    tags: ["Python", "Pandas", "Limpeza de Dados", "CSV"],
+    github: "https://github.com/PedrodAguiar/Alunos_data",
   },
   {
-    title: "Chatbot Intelbras",
+    title: "Assistente de Compras Intelbras",
     description:
-      "Projeto de chatbot interativo que utiliza Python para web scraping dos dados da pagina da Intelbras, demonstrando habilidades em logica de conversacao e desenvolvimento de solucoes de comunicacao.",
-    tags: ["Python", "Web Scraping", "Chatbot"],
+      "Assistente baseado em uma base CSV de produtos, com recomendação via Groq/Llama 3 e scripts Python com Selenium para coleta e enriquecimento automatizado dos dados.",
+    tags: ["Python", "Selenium", "CSV", "IA"],
     github: "https://github.com/PedrodAguiar/intelbras",
   },
 ];
@@ -44,8 +44,8 @@ const Projects = () => {
           Meus Projetos
         </h2>
         <p className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-          Aqui estao alguns dos projetos que desenvolvi. Cada um representa meu
-          compromisso com qualidade e inovacao.
+          Projetos que conectam minha base em desenvolvimento de software com
+          organização de informações, APIs, automação e resolução de problemas.
         </p>
       </div>
 

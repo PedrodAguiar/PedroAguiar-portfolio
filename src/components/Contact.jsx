@@ -16,8 +16,8 @@ const Contact = () => {
           Vamos trabalhar juntos?
         </h2>
         <p className="mx-auto max-w-2xl text-lg text-gray-500 dark:text-gray-400">
-          Gostou dos projetos? Entre em contato para conversar sobre
-          oportunidades, freelas e colaboracoes.
+          Entre em contato para conversar sobre oportunidades de Estágio,
+          Analista de Dados, projetos de dados ou colaborações em tecnologia.
         </p>
       </div>
 
